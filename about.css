@@ -1,0 +1,13 @@
+.settings-info-section > p {
+	max-width: 720px;
+}
+
+.about-system-table > div:nth-child(odd) {
+	border-right: 1px solid #d9e6f3;
+}
+
+@media (max-width: 760px) {
+	.about-system-table > div:nth-child(odd) {
+		border-right: 0;
+	}
+}

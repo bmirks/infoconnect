@@ -1,0 +1,381 @@
+:root {
+	--home-bg: #eef7fc;
+	--home-card: #fff;
+	--home-line: #e4edf6;
+	--home-text: #142d55;
+	--home-muted: #617999;
+	--home-blue: #147dff;
+	--home-shadow: 0 5px 16px rgba(28, 70, 118, 0.04);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--home-bg);
+	color: var(--home-text);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.staff-main {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.staff-content {
+	display: flex;
+	flex: 1;
+	min-width: 0;
+	flex-direction: column;
+	gap: 12px;
+	padding: 12px 15px 18px;
+}
+
+.home-top-grid {
+	display: grid;
+	align-items: stretch;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 0.5fr);
+	gap: 12px;
+	min-width: 0;
+}
+
+.home-left-column {
+	display: grid;
+	grid-template-rows: auto auto;
+	align-content: start;
+	gap: 12px;
+	min-width: 0;
+}
+
+.home-card {
+	min-width: 0;
+	border: 1px solid var(--home-line);
+	border-radius: 7px;
+	background: var(--home-card);
+	box-shadow: var(--home-shadow);
+}
+
+.quick-card {
+	padding: 12px 16px 8px;
+}
+
+.card-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 12px;
+}
+
+.card-heading h1,
+.card-heading h2 {
+	margin: 0;
+	color: var(--home-text);
+	font-size: 1rem;
+	font-weight: 750;
+	line-height: 1.25;
+}
+
+.card-heading p {
+	margin: 4px 0 0;
+	color: var(--home-muted);
+	font-size: 0.82rem;
+}
+
+.section-link {
+	color: var(--home-blue);
+	font-size: 0.76rem;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.section-link:hover {
+	text-decoration: underline;
+}
+
+.quick-actions {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(140px, 1fr));
+	gap: 10px;
+	overflow-x: auto;
+}
+
+.quick-action {
+	display: flex;
+	min-height: 78px;
+	min-width: 0;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	padding: 10px 12px;
+	border-radius: 7px;
+	text-decoration: none;
+	transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.quick-action:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 5px 12px rgba(24, 54, 92, 0.1);
+}
+
+.quick-action strong {
+	font-size: 0.79rem;
+	font-weight: 750;
+}
+
+.quick-action span {
+	font-size: 0.71rem;
+}
+
+.quick-blue {
+	background: #e4f2ff;
+	color: #17365e;
+}
+
+.quick-green {
+	background: #e4fbf3;
+	color: #17365e;
+}
+
+.quick-red {
+	background: #fff0f0;
+	color: #b82424;
+}
+
+.quick-purple {
+	background: #f4ecff;
+	color: #7420df;
+}
+
+.home-calendar-column {
+	display: flex;
+	min-width: 0;
+	align-self: start;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.calendar-card {
+	display: flex;
+	width: 100%;
+	height: 320px;
+	min-height: 320px;
+	align-self: start;
+	flex-direction: column;
+	padding: 9px 14px 10px;
+}
+
+.calendar-card .card-heading {
+	margin: 0 0 3px;
+}
+
+.calendar-heading {
+	display: flex;
+	height: 30px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.calendar-month {
+	font-size: 0.84rem;
+	font-weight: 750;
+}
+
+.calendar-nav {
+	display: inline-grid;
+	width: 26px;
+	height: 26px;
+	place-items: center;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--home-text);
+	font: inherit;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+
+.calendar-nav:hover {
+	background: #eaf3ff;
+}
+
+.calendar-weekdays,
+.calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+	gap: 2px;
+}
+
+.calendar-weekdays {
+	margin: 2px 0 3px;
+	color: var(--home-muted);
+	font-size: 0.62rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.calendar-day {
+	position: relative;
+	display: grid;
+	width: 100%;
+	max-width: 36px;
+	height: 32px;
+	place-items: center;
+	justify-self: center;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--home-text);
+	font: inherit;
+	font-size: 0.68rem;
+	cursor: pointer;
+}
+
+.calendar-day:hover {
+	background: #e9f3ff;
+}
+
+.calendar-day.other-month {
+	color: #9eacc0;
+}
+
+.calendar-day.selected,
+.calendar-day.selected:hover {
+	background: var(--home-blue);
+	color: #fff;
+}
+
+.calendar-day.has-events::after {
+	position: absolute;
+	bottom: 2px;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: var(--home-blue);
+	content: "";
+}
+
+.calendar-day.selected.has-events::after {
+	background: #fff;
+}
+
+.calendar-day:focus-visible {
+	outline: 2px solid var(--home-blue);
+	outline-offset: 2px;
+}
+
+.calendar-summary-card {
+	display: flex;
+	height: 120px;
+	min-height: 120px;
+	flex: 0 0 120px;
+	flex-direction: column;
+	gap: 6px;
+	overflow-y: auto;
+	margin: 0;
+	padding: 8px 12px;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.calendar-summary-card[hidden] {
+	display: none;
+}
+
+.summary-title {
+	color: var(--home-text);
+	font-size: 0.75rem;
+	font-weight: 750;
+}
+
+.summary-item {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 7px 9px;
+	border: 1px solid #dce8f4;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.summary-item strong {
+	font-size: 0.72rem;
+}
+
+.summary-item span,
+.summary-empty {
+	margin: 0;
+	color: var(--home-muted);
+	font-size: 0.68rem;
+}
+
+.activities-card {
+	min-height: 276px;
+	padding: 14px 16px;
+}
+
+.activities-card .card-heading {
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #e9eff6;
+}
+
+.table-scroll {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.home-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.68rem;
+}
+
+.home-table th,
+.home-table td {
+	padding: 9px 10px;
+	border-bottom: 1px solid #edf1f6;
+	color: var(--home-text);
+	text-align: left;
+	vertical-align: middle;
+}
+
+.home-table th {
+	background: #eff6fc;
+	font-size: 0.67rem;
+	font-weight: 750;
+	white-space: nowrap;
+}
+
+.home-table td {
+	max-width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.empty-cell {
+	padding: 15px 8px !important;
+	color: var(--home-muted) !important;
+	text-align: center !important;
+}
+
+@media (max-width: 1100px) {
+	.home-top-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 640px) {
+	.staff-content {
+		padding: 12px;
+	}
+
+	.home-table {
+		min-width: 620px;
+	}
+}

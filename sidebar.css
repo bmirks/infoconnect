@@ -1,0 +1,266 @@
+:root {
+    --sidebar-bg: #0f2d4c;
+    --sidebar-hover: #163f62;
+    --sidebar-text: #eaf2ff;
+    --sidebar-muted: #bfd3ee;
+    --font-admin: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--font-admin);
+}
+
+.staff-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    align-items: stretch;
+}
+
+.staff-sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 100vh;
+    overflow-y: auto;
+    background: linear-gradient(180deg, var(--sidebar-bg) 0%, #102b44 100%);
+    color: var(--sidebar-text);
+    padding: 16px 14px;
+    box-shadow: 4px 0 18px rgba(12, 21, 36, 0.12);
+    z-index: 30;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+    scrollbar-width: thin;
+}
+
+.staff-sidebar .sidebar-brand {
+    padding: 8px 10px 14px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.staff-sidebar .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.staff-sidebar .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.staff-sidebar .nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.staff-sidebar button.nav-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    text-align: left;
+    padding: 10px 32px 10px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    font-family: var(--font-admin);
+}
+
+.staff-sidebar .nav-button::after {
+    content: "▾";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--sidebar-muted);
+    transition: transform 0.25s ease;
+}
+
+.staff-sidebar .nav-group.open .nav-button::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.staff-sidebar .nav-button:hover,
+.staff-sidebar .sidebar-link:hover,
+.staff-sidebar .sidebar-link.active,
+.staff-sidebar .submenu a.active {
+    background: var(--sidebar-hover);
+    transform: translateX(2px);
+    color: #ffffff;
+}
+
+.staff-sidebar .nav-button:focus-visible,
+.staff-sidebar .sidebar-link:focus-visible,
+.staff-sidebar .submenu a:focus-visible {
+    outline: 2px solid #9bc9ff;
+    outline-offset: 2px;
+}
+
+.staff-sidebar .submenu {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    overflow: hidden;
+    transition: grid-template-rows 0.28s ease, opacity 0.25s ease, margin 0.25s ease;
+}
+
+.staff-sidebar .nav-group.open .submenu {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin: 4px 0 8px 10px;
+}
+
+.staff-sidebar .submenu-inner {
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.staff-sidebar .submenu a {
+    color: var(--sidebar-muted);
+    text-decoration: none;
+    font-size: 0.84rem;
+    padding: 7px 10px;
+    border-radius: 8px;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+    font-family: var(--font-admin);
+}
+
+.staff-sidebar .submenu a:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    transform: translateX(2px);
+}
+
+.staff-sidebar .sidebar-link {
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    font-family: var(--font-admin);
+}
+
+@media (max-width: 900px) {
+    .staff-layout {
+        flex-direction: column;
+    }
+
+    .staff-sidebar {
+        position: relative;
+        top: auto;
+        left: auto;
+        align-self: stretch;
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        overflow: visible;
+        padding: 12px 20px;
+    }
+
+    .staff-sidebar .sidebar-brand {
+        padding: 4px 8px 12px;
+        margin-bottom: 10px;
+        font-size: 1.45rem;
+    }
+
+    .staff-sidebar .sidebar-nav {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .staff-sidebar .nav-links {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .staff-sidebar .sidebar-link,
+    .staff-sidebar button.nav-button {
+        width: auto;
+        padding: 9px 10px;
+        font-size: 0.84rem;
+    }
+
+    .staff-sidebar .nav-group {
+        position: relative;
+    }
+
+    .staff-sidebar .nav-group.open .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 40;
+        min-width: 190px;
+        margin: 4px 0 0;
+        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        background: #102b44;
+        box-shadow: 0 10px 24px rgba(12, 21, 36, 0.22);
+    }
+
+    .staff-sidebar .submenu-inner {
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .staff-sidebar {
+        padding: 10px 12px;
+    }
+
+    .staff-sidebar .sidebar-nav {
+        align-items: stretch;
+        gap: 3px;
+        padding: 2px 2px 8px;
+    }
+
+    .staff-sidebar .nav-links {
+        gap: 3px;
+    }
+
+    .staff-sidebar .sidebar-link,
+    .staff-sidebar button.nav-button {
+        min-height: 40px;
+        white-space: nowrap;
+    }
+}

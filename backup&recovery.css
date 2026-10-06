@@ -1,0 +1,11 @@
+.settings-info-section > p {
+	max-width: 720px;
+}
+
+.backup-tool-grid {
+	align-items: stretch;
+}
+
+.settings-data-table {
+	min-width: 600px;
+}

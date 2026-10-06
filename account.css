@@ -1,0 +1,15 @@
+.settings-fields {
+	max-width: 760px;
+}
+
+.settings-control-grid {
+	gap: 11px 16px;
+}
+
+.settings-control-row {
+	grid-template-columns: minmax(175px, 0.9fr) minmax(0, 1.1fr);
+}
+
+.settings-control-row small {
+	grid-column: 2;
+}

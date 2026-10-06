@@ -1,0 +1,494 @@
+.staff-settings-page {
+	gap: 12px;
+	padding: 16px 20px 24px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.settings-page-heading h1 {
+	margin: 0;
+	color: #152e57;
+	font-size: clamp(1.45rem, 2vw, 1.8rem);
+	line-height: 1.2;
+}
+
+.settings-page-heading p {
+	margin: 4px 0 0;
+	color: #587296;
+	font-size: 0.9rem;
+}
+
+.settings-alert {
+	border: 1px solid transparent;
+	border-radius: 7px;
+	padding: 10px 12px;
+	font-size: 0.82rem;
+}
+
+.settings-alert.success {
+	border-color: #b7dfc8;
+	background: #effaf3;
+	color: #1d6842;
+}
+
+.settings-alert.error {
+	border-color: #efc3bd;
+	background: #fff5f3;
+	color: #913d31;
+}
+
+.settings-alert ul {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.settings-layout {
+	display: grid;
+	grid-template-columns: minmax(190px, 0.5fr) minmax(0, 1.5fr);
+	align-items: stretch;
+	gap: 8px;
+	min-width: 0;
+}
+
+.settings-navigation,
+.settings-panel {
+	min-width: 0;
+	border: 1px solid #dcecf7;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 5px 16px rgba(28, 70, 118, 0.04);
+}
+
+.settings-navigation {
+	display: flex;
+	flex-direction: column;
+	padding: 7px;
+}
+
+.settings-nav-item {
+	display: flex;
+	align-items: flex-start;
+	border-radius: 5px;
+	color: #18345e;
+	padding: 11px 9px;
+	text-decoration: none;
+}
+
+.settings-nav-item + .settings-nav-item {
+	border-top: 1px solid #eef4fa;
+}
+
+.settings-nav-item:hover,
+.settings-nav-item.active {
+	background: #e7f5ff;
+}
+
+.settings-nav-item:focus-visible {
+	outline: 2px solid #4db6ff;
+	outline-offset: 2px;
+}
+
+.settings-nav-item strong,
+.settings-nav-item small {
+	display: block;
+}
+
+.settings-nav-item strong {
+	font-size: 0.76rem;
+	line-height: 1.25;
+}
+
+.settings-nav-item small {
+	margin-top: 3px;
+	color: #617999;
+	font-size: 0.66rem;
+	line-height: 1.4;
+}
+
+.settings-panel {
+	padding: 14px;
+}
+
+.panel-heading {
+	margin-bottom: 13px;
+}
+
+.panel-heading h2 {
+	margin: 0;
+	color: #152e57;
+	font-size: 1.08rem;
+	line-height: 1.25;
+}
+
+.panel-heading p {
+	margin: 3px 0 0;
+	color: #587296;
+	font-size: 0.75rem;
+	line-height: 1.45;
+}
+
+.settings-profile-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px 12px;
+}
+
+.settings-profile-grid label,
+.settings-password-form > label {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	gap: 4px;
+	color: #526b8d;
+	font-size: 0.7rem;
+	font-weight: 700;
+}
+
+.settings-profile-grid label b,
+.settings-password-form label b {
+	color: #db4242;
+}
+
+.settings-profile-grid input,
+.settings-password-form input {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 0;
+	min-height: 32px;
+	border: 1px solid #d5e2f1;
+	border-radius: 5px;
+	background: #fff;
+	color: #18345e;
+	padding: 6px 9px;
+	font: inherit;
+	font-size: 0.72rem;
+	font-weight: 400;
+}
+
+.settings-profile-grid input:focus,
+.settings-password-form input:focus {
+	border-color: #3c84ff;
+	outline: 2px solid rgba(20, 100, 255, 0.13);
+	outline-offset: 1px;
+}
+
+.settings-profile-grid input[readonly] {
+	border-color: #e1e9f1;
+	background: #eef3f8;
+	color: #536a91;
+}
+
+.settings-profile-grid .profile-email {
+	grid-column: 1 / -1;
+}
+
+.panel-actions {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+}
+
+.panel-actions button {
+	min-height: 34px;
+	border: 0;
+	border-radius: 5px;
+	background: #0755f5;
+	color: #fff;
+	padding: 7px 15px;
+	font: inherit;
+	font-size: 0.72rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.panel-actions button:hover {
+	background: #0346d5;
+}
+
+.settings-password-form {
+	display: flex;
+	max-width: 620px;
+	flex-direction: column;
+	gap: 13px;
+}
+
+.settings-password-form > label {
+	gap: 5px;
+}
+
+.settings-password-form input {
+	min-height: 38px;
+	font-size: 0.76rem;
+}
+
+.settings-password-form small {
+	color: #617999;
+	font-size: 0.68rem;
+	font-weight: 400;
+}
+
+.password-strength {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.strength-meter {
+	height: 5px;
+	overflow: hidden;
+	border-radius: 99px;
+	background: #e8edf3;
+}
+
+.strength-meter span {
+	display: block;
+	width: 0;
+	height: 100%;
+	border-radius: inherit;
+	background: #d76858;
+	transition: width 0.2s ease, background 0.2s ease;
+}
+
+.password-strength[data-strength="weak"] .strength-meter span {
+	width: 35%;
+	background: #d76858;
+}
+
+.password-strength[data-strength="strong"] .strength-meter span {
+	width: 100%;
+	background: #269563;
+}
+
+.password-strength p {
+	margin: 0;
+	color: #a84a39;
+	font-size: 0.68rem;
+	font-weight: 700;
+}
+
+.password-strength[data-strength="strong"] p {
+	color: #1d7f50;
+}
+
+.password-strength[data-strength="empty"] p {
+	color: #607387;
+	font-weight: 400;
+}
+
+.support-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	border: 1px solid #dcecf7;
+	border-radius: 6px;
+	background: #f4faff;
+	padding: 13px;
+	color: #526b8d;
+	font-size: 0.78rem;
+}
+
+.support-contact strong {
+	color: #152e57;
+	font-size: 0.84rem;
+}
+
+.support-contact a {
+	color: #0f3d7a;
+	font-weight: 700;
+}
+
+.support-form {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px 12px;
+	margin-top: 14px;
+}
+
+.support-form label {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	gap: 4px;
+	color: #526b8d;
+	font-size: 0.7rem;
+	font-weight: 700;
+}
+
+.support-form label b {
+	color: #db4242;
+}
+
+.support-form input,
+.support-form select,
+.support-form textarea {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 0;
+	min-height: 34px;
+	border: 1px solid #d5e2f1;
+	border-radius: 5px;
+	background: #fff;
+	color: #18345e;
+	padding: 7px 9px;
+	font: inherit;
+	font-size: 0.72rem;
+	font-weight: 400;
+}
+
+.support-form textarea {
+	min-height: 105px;
+	resize: vertical;
+}
+
+.support-form input:focus,
+.support-form select:focus,
+.support-form textarea:focus {
+	border-color: #3c84ff;
+	outline: 2px solid rgba(20, 100, 255, 0.13);
+	outline-offset: 1px;
+}
+
+.support-form .support-message-field {
+	grid-column: 1 / -1;
+}
+
+.support-form .support-message-field small {
+	align-self: flex-end;
+	color: #617999;
+	font-size: 0.65rem;
+	font-weight: 400;
+}
+
+.support-form .panel-actions {
+	grid-column: 1 / -1;
+	margin-top: 0;
+}
+
+.support-panel h3 {
+	margin: 18px 0 6px;
+	color: #152e57;
+	font-size: 0.92rem;
+}
+
+.support-empty {
+	margin: 0;
+	border: 1px solid #e2edf6;
+	border-radius: 5px;
+	color: #617999;
+	padding: 12px;
+	font-size: 0.74rem;
+}
+
+.about-banner {
+	display: flex;
+	min-height: 100px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	border-radius: 6px;
+	background: linear-gradient(120deg, #e7f6ff, #f3faff);
+	color: #587296;
+	padding: 14px;
+	text-align: center;
+}
+
+.about-banner strong {
+	color: #152e57;
+	font-size: 1.35rem;
+}
+
+.about-banner span {
+	font-size: 0.76rem;
+}
+
+.about-banner p {
+	margin: 0;
+	font-size: 0.68rem;
+}
+
+.settings-about-table {
+	margin-top: 10px;
+}
+
+.settings-about-table th {
+	width: 190px;
+	background: #eff6fc;
+	color: #243b61;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-align: left;
+	text-transform: none;
+}
+
+.settings-about-table td {
+	color: #18345e;
+	font-size: 0.78rem;
+	white-space: normal;
+}
+
+.settings-about-table tr:nth-child(even) {
+	background: #fbfdff;
+}
+
+.settings-about-table tr:hover th,
+.settings-about-table tr:hover td {
+	background: #f2f8ff;
+}
+
+@media (max-width: 1000px) {
+	.settings-layout {
+		grid-template-columns: minmax(170px, 0.6fr) minmax(0, 1.4fr);
+	}
+
+}
+
+@media (max-width: 700px) {
+	.settings-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.settings-navigation {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 4px;
+	}
+
+	.settings-nav-item + .settings-nav-item {
+		border-top: 0;
+	}
+}
+
+@media (max-width: 520px) {
+	.staff-settings-page {
+		padding: 16px;
+	}
+
+	.settings-navigation {
+		grid-template-columns: 1fr;
+	}
+
+	.settings-profile-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.support-form {
+		grid-template-columns: 1fr;
+	}
+
+	.settings-profile-grid .profile-email {
+		grid-column: auto;
+	}
+
+	.support-form .support-message-field,
+	.support-form .panel-actions {
+		grid-column: auto;
+	}
+
+	.settings-panel {
+		padding: 12px;
+	}
+
+	.panel-actions button {
+		width: 100%;
+	}
+}

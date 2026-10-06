@@ -1,0 +1,295 @@
+.archive-requests-page {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	gap: 12px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.archive-requests-page .requests-heading h1 {
+	margin: 0;
+	color: #152e57;
+	font-size: clamp(1.45rem, 2vw, 1.8rem);
+	line-height: 1.2;
+}
+
+.archive-requests-page .requests-heading p {
+	margin: 4px 0 0;
+	color: #587296;
+	font-size: 0.9rem;
+}
+
+.archive-requests-page .requests-error {
+	border: 1px solid #efc4bf;
+	border-radius: 8px;
+	background: #fff4f2;
+	color: #963d32;
+	padding: 12px 14px;
+}
+
+.archive-requests-page .pending-requests-card {
+	min-width: 0;
+	border: 1px solid var(--line, #dfe8f3);
+	border-radius: 9px;
+	background: var(--card-bg, #fff);
+	box-shadow: var(--shadow, 0 8px 22px rgba(15, 61, 122, 0.08));
+	padding: 16px;
+}
+
+.archive-requests-page .requests-filter-grid {
+	display: grid;
+	grid-template-columns: minmax(280px, 1.6fr) repeat(3, minmax(130px, 0.7fr));
+	align-items: end;
+	gap: 10px;
+	margin-bottom: 14px;
+}
+
+.archive-requests-page .requests-search {
+	position: relative;
+	display: flex;
+	width: 100%;
+	gap: 0;
+}
+
+.archive-requests-page .requests-search input,
+.archive-requests-page .requests-filter-grid .filter-field select {
+	box-sizing: border-box;
+	min-height: 40px;
+	border: 1px solid #dfe8f3;
+	border-radius: 7px;
+	background: #fff;
+	color: #16314b;
+	font: inherit;
+	font-size: 0.82rem;
+}
+
+.archive-requests-page .requests-search input {
+	width: 100%;
+	min-width: 0;
+	flex: 1;
+	padding: 8px 84px 8px 10px;
+}
+
+.archive-requests-page .requests-search button {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	bottom: 4px;
+	min-height: 0;
+	border: 0;
+	border-radius: 5px;
+	background: #0f3d7a;
+	color: #fff;
+	padding: 0 14px;
+	font: inherit;
+	font-size: 0.82rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.archive-requests-page .requests-search button:hover {
+	background: #174d91;
+}
+
+.archive-requests-page .requests-search input:focus,
+.archive-requests-page .requests-filter-grid .filter-field select:focus {
+	border-color: #147dff;
+	outline: 2px solid rgba(20, 125, 255, 0.14);
+	outline-offset: 1px;
+}
+
+.archive-requests-page .requests-filter-grid .filter-field {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	color: #243b61;
+	font-size: 0.76rem;
+	font-weight: 700;
+}
+
+.archive-requests-page .requests-filter-grid .filter-field select {
+	width: 100%;
+	padding: 8px 10px;
+}
+
+.archive-requests-page .table-wrap {
+	overflow-x: auto;
+}
+
+.archive-requests-page .requests-data-table {
+	width: 100%;
+	min-width: 1240px;
+	border-collapse: collapse;
+	margin-top: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 0.78rem;
+}
+
+.archive-requests-page .requests-data-table th,
+.archive-requests-page .requests-data-table td {
+	box-sizing: border-box;
+	padding: 10px 12px;
+	border-bottom: 1px solid #edf1f6;
+	text-align: left;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.archive-requests-page .requests-data-table th {
+	background: #eff6fc;
+	color: #243b61;
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.archive-requests-page .requests-data-table td {
+	color: #16314b;
+	font-size: 0.78rem;
+	font-weight: 400;
+}
+
+.archive-requests-page .requests-data-table tbody tr:nth-child(even) {
+	background: #fbfdff;
+}
+
+.archive-requests-page .requests-data-table tbody tr:hover td {
+	background: #f2f8ff;
+}
+
+.archive-requests-page .requests-data-table .status-badge {
+	display: inline-flex;
+	min-width: 0;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	padding: 5px 9px;
+	font-size: 0.74rem;
+	font-weight: 700;
+}
+
+.archive-requests-page .status-badge.approved {
+	background: rgba(43, 182, 115, 0.12);
+	color: #1d7f50;
+}
+
+.archive-requests-page .status-badge.rejected {
+	background: rgba(227, 109, 90, 0.12);
+	color: #a84a39;
+}
+
+.archive-requests-page .request-row-number {
+	color: #71839b !important;
+}
+
+.archive-requests-page .requests-data-table .section-action {
+	display: inline-flex;
+	min-width: 56px;
+	min-height: 28px;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	border-radius: 5px;
+	background: #0f3d7a;
+	color: #fff;
+	padding: 4px 10px;
+	font-size: 0.78rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.archive-requests-page .requests-data-table .section-action:hover {
+	background: #174d91;
+}
+
+.archive-requests-page .requests-data-table .requests-empty-row td {
+	padding: 28px 12px;
+	color: #617999;
+	text-align: center;
+}
+
+.archive-requests-page .requests-table-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.archive-requests-page .requests-result-count {
+	margin: 0;
+	color: #526b8d;
+	font-size: 0.78rem;
+}
+
+.archive-requests-page .requests-table-footer .pagination {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 4px;
+	margin: 0;
+}
+
+.archive-requests-page .requests-table-footer .pagination button {
+	min-width: 34px;
+	min-height: 34px;
+	border: 1px solid #dfe8f3;
+	border-radius: 6px;
+	background: #fff;
+	color: #16314b;
+	font: inherit;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+
+.archive-requests-page .requests-table-footer .pagination button:hover:not(:disabled),
+.archive-requests-page .requests-table-footer .pagination button.active {
+	border-color: #0f3d7a;
+	background: #0f3d7a;
+	color: #fff;
+}
+
+.archive-requests-page .requests-table-footer .pagination button:disabled {
+	cursor: not-allowed;
+	opacity: 0.45;
+}
+
+.archive-requests-page .requests-table-footer .page-ellipsis {
+	padding: 0 3px;
+	color: #526b8d;
+	font-size: 0.8rem;
+}
+
+@media (max-width: 1050px) {
+	.archive-requests-page .requests-filter-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.archive-requests-page .requests-search {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (max-width: 768px) {
+	.archive-requests-page .requests-table-footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.archive-requests-page .requests-table-footer .pagination {
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 560px) {
+	.archive-requests-page .pending-requests-card {
+		padding: 12px;
+	}
+
+	.archive-requests-page .requests-filter-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.archive-requests-page .requests-search {
+		grid-column: 1 / -1;
+	}
+}

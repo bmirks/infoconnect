@@ -1,0 +1,120 @@
+.settings-password-heading {
+	margin-bottom: 7px;
+}
+
+.settings-password-form {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+	padding: 1px 8px 2px;
+}
+
+.settings-password-form label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	color: #142b67;
+	font-size: 0.68rem;
+	font-weight: 700;
+}
+
+.settings-password-form input {
+	width: 100%;
+	min-height: 31px;
+	border: 1px solid #d7e4f2;
+	border-radius: 4px;
+	background: #fff;
+	color: #142b67;
+	padding: 6px 10px;
+	font: inherit;
+	font-size: 0.72rem;
+	font-weight: 400;
+}
+
+.settings-password-form input::placeholder {
+	color: #9aa9bf;
+}
+
+.settings-password-form input:focus {
+	border-color: #6baeff;
+	outline: 2px solid rgba(20, 125, 255, 0.13);
+}
+
+.settings-password-form small {
+	color: #617999;
+	font-size: 0.68rem;
+	font-weight: 400;
+}
+
+.settings-password-actions {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.settings-password-actions button {
+	display: inline-flex;
+	min-height: 32px;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	border-radius: 4px;
+	background: #0f3d7a;
+	color: #fff;
+	padding: 0 16px;
+	font: inherit;
+	font-size: 0.7rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.settings-password-actions button:hover {
+	background: #174d91;
+}
+
+.password-strength {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.strength-meter {
+	height: 5px;
+	overflow: hidden;
+	border-radius: 99px;
+	background: #e8edf3;
+}
+
+.strength-meter span {
+	display: block;
+	width: 0;
+	height: 100%;
+	border-radius: inherit;
+	background: #d76858;
+	transition: width 0.2s ease, background 0.2s ease;
+}
+
+.password-strength[data-strength="weak"] .strength-meter span {
+	width: 35%;
+	background: #d76858;
+}
+
+.password-strength[data-strength="strong"] .strength-meter span {
+	width: 100%;
+	background: #269563;
+}
+
+.password-strength p {
+	margin: 0;
+	color: #a84a39;
+	font-size: 0.68rem;
+	font-weight: 700;
+}
+
+.password-strength[data-strength="strong"] p {
+	color: #1d7f50;
+}
+
+.password-strength[data-strength="empty"] p {
+	color: #607387;
+	font-weight: 400;
+}

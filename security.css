@@ -1,0 +1,22 @@
+.settings-info-section .settings-primary-link {
+	display: inline-flex;
+	min-height: 32px;
+	align-items: center;
+	justify-content: center;
+	margin: 0 9px 8px;
+	border-radius: 4px;
+	background: #0f3d7a;
+	color: #fff;
+	padding: 0 16px;
+	font-size: 0.7rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.settings-info-section .settings-primary-link:hover {
+	background: #174d91;
+}
+
+.security-control-grid {
+	gap: 11px;
+}
